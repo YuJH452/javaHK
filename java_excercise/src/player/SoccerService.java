@@ -1,7 +1,7 @@
 package player;
 
 import java.util.ArrayList;
-
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -21,7 +21,7 @@ public class SoccerService {
 
 
 
-	public void selectTeam() {
+	public void getTeamList() {
 		System.out.println("구단 리스트");
 		for (Team t : tlist) {
 			System.out.println(t);
@@ -39,14 +39,15 @@ public class SoccerService {
 		tlist.add(new Team(teamName, teamMoney));
 
 	}
+	
 	public void deleteTeam() {
 		System.out.println("삭제할 구단명 ");
 		String tn = sc.nextLine();
-		for(Team t : tlist)
-		if(t.getTeamName().equals(tn)) {
-		plist.remove(t);	
 		
+		for(Team t : tlist) {
+			if(t.getTeamName().equals(tn)) plist.remove(t);
 		}
+		
 	}
 
 	public void insertPlayer() {
@@ -87,6 +88,27 @@ public class SoccerService {
 
 	public void buyPlayer() {
 		
+		Team selecteam = selectTeam();
+	
+		Player p = new Player();
+		
+		selecteam.addPlayer(p);
+		
+		
+		
+	}
+	
+	public Team selectTeam() {
+		
+		System.out.println("팀 목록");
+		for(int i = 0 ; i < tlist.size() ; i ++ ) {
+			System.out.println( "팀 번호 : " + i + " 팀 이름 : " + tlist.get(i).getTeamName());
+		}
+		
+		System.out.println("선택할 팀 번호");
+		String teamNumber = sc.nextLine();
+		
+		return tlist.get(Integer.parseInt(teamNumber));
 		
 	}
 	

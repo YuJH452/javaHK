@@ -26,7 +26,7 @@ public class TestMain {
 			  while(true) {
 //				  try {
 ////				FileInputStream fis = new FileInputStream("book.dat");
-//					  ObjectInputStream ois = new ObjectInputStream(new FileInputStream("team.dat"));
+//					ObjectInputStream ois = new ObjectInputStream(new FileInputStream("team.dat"));
 //					  
 //				  }catch(FileNotFoundException e) {
 //					  e.printStackTrace();
@@ -51,7 +51,7 @@ public class TestMain {
 	                        ss.insertTeam();
 	                        break;
 	                    case 2://구단 검색
-	                    	ss.selectTeam();
+	                    	ss.getTeamList();
 	                        break;
 	                    case 3://선수정보 삭제
 	                    	ss.deleteTeam();
@@ -63,6 +63,7 @@ public class TestMain {
 	                    	ss.selectPlayer();
 	                    	break;
 	                    case 6:
+	                    	ss.buyPlayer();
 	                    	break;
 	                    case 7:
 	                    	break;
@@ -74,6 +75,7 @@ public class TestMain {
 	                        System.out.println("오류");
 	                }
 	             
+	                
 	             
 //	                try {
 //	                	ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("team.txt"));

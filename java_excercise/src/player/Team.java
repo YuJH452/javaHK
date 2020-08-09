@@ -1,11 +1,11 @@
 package player;
 
-
+import java.util.List;
 
 public class Team {
 	private String teamName;
 	private String money;
-	
+	private List<Player> playerList;
 	
 	public Team() {
 		
@@ -59,6 +59,11 @@ public class Team {
 		}
 		
 		return false;
+	}
+
+
+	public void addPlayer(Player player) {
+		this.playerList.add(player);
 	}
 	
 }
